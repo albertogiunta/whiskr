@@ -4,9 +4,9 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import com.jaus.albertogiunta.giftimewaster.R
+import com.jaus.albertogiunta.giftimewaster.utils.Sources
 import kotlinx.android.synthetic.main.activity_main.*
 import link.fls.swipestack.SwipeStack
-import java.util.*
 
 class MainActivity : AppCompatActivity(), SwipeStack.SwipeStackListener, View.OnClickListener {
 
@@ -16,7 +16,8 @@ class MainActivity : AppCompatActivity(), SwipeStack.SwipeStackListener, View.On
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        l = LinkedList()
+        Sources.initialize()
+        l = mutableListOf()
         l.add("")
         l.add("")
         adapter = SwipeStackAdapter(this@MainActivity, l)
